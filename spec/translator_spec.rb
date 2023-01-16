@@ -24,7 +24,7 @@ RSpec.describe Translator do
 
   describe '#eng_braille_translate' do
     it 'will return the braille arrays in formated lines' do
-      expect(translator.eng_braille_translate).to eq("")
+      expect(translator.eng_braille_translate).to eq("0.\n..\n..")
     end
   end
 
