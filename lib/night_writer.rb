@@ -9,4 +9,4 @@ output = File.open(ARGV[1], "w")
 output_text = translator.eng_braille_translate
 output.write(output_text)
 
-puts "Created '#{ARGV[1]}' containing #{output_text.length} characters"
+puts "Created '#{ARGV[1]}' containing #{incoming_text.length} characters"
