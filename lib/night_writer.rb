@@ -1,16 +1,12 @@
-message = File.open(ARGV[0], "r")
+require './lib/Translator'
 
-incoming_text = message.read
+input = File.open(ARGV[0], "r")
+incoming_text = input.read
 
-message.close
+translator = Translator.new(incoming_text)
 
-braille_text = incoming_text
-
-braille_file = File.open(ARGV[1], "w")
-
-braille_file.write(braille_text)
-
-braille_file.close
-# require 'pry'; binding.pry
+output = File.open(ARGV[1], "w") 
+output_text = translator.array_format
+output.write(output_text)
 
 puts "Created '#{ARGV[1]}' containing #{incoming_text.length} characters"
