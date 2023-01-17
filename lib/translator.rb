@@ -23,6 +23,5 @@ class Translator
         letters.join
       end.join("\n")
     end.join("\n")
-    # require 'pry'; binding.pry
   end
 end
