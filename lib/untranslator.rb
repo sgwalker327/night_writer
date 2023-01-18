@@ -10,29 +10,23 @@ class Untranslator
     @input = input
   end
 
-  # def braille_eng_array #works for one letter
-  #   input_splits = input.split("\n")
-  #   braille_dictionary[input_splits]
-  # end
-  
-  # def braille_eng_array #works for 2 letters and only 2
-  #   input_splits = input.scan(/(..)(..)/).transpose.map do |char|
-  #       braille_dictionary[char]
-  #   end.join
-  # end
-
   def braille_array
     input_splits = input.split()
-    # require 'pry'; binding.pry
-    braille = input_splits.map do |line|
+    braille = input_splits.each_slice(3).map do |lines|
+      lines.map do |line|
       line.scan(/../)
+      end
     end
-    braille.transpose
+    braille.map do |short_line|
+        short_line.transpose
+    end
   end
 
   def braille_eng_translation
-    braille_array.map do |char|
-      braille_dictionary[char]
-    end.join
+    x = braille_array.map do |char|
+          char.map do |s|
+            braille_dictionary[s]
+          end
+      end.join
   end
 end
