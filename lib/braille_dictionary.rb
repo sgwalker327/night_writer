@@ -1,6 +1,6 @@
 module BrailleDictionary
 
-  def Braille_dictionary 
+  def braille_dictionary 
     {
       ["0.", "..", ".."] => "a",
       ["0.", "0.", ".."] => "b",
@@ -27,7 +27,7 @@ module BrailleDictionary
       [".0", "00", ".0"] => "w",
       ["00", "..", "00"] => "x",
       ["00", ".0", "00"] => "y",
-      ["0.", ".0", "00"] => "y",
+      ["0.", ".0", "00"] => "z",
       ["..", "..", ".."] => " "
     }
   end
