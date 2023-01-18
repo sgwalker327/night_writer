@@ -14,7 +14,7 @@ class Untranslator
     input_splits = input.split()
     braille = input_splits.each_slice(3).map do |lines|
       lines.map do |line|
-      line.scan(/../)
+        line.scan(/../)
       end
     end
     braille.map do |short_line|

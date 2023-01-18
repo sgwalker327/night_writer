@@ -1,4 +1,4 @@
-require './lib/Translator'
+require './lib/translator'
 
 input = File.open(ARGV[0], "r")
 incoming_text = input.read

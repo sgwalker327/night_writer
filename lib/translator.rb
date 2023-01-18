@@ -18,7 +18,7 @@ class Translator
   end
 
   def array_format
-    new_strings = eng_braille_array.each_slice(40).map do |array|
+    eng_braille_array.each_slice(40).map do |array|
       array.transpose.filter_map do |letters|
         letters.join
       end.join("\n")
