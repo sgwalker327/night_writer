@@ -23,10 +23,11 @@ class Untranslator
   end
 
   def braille_eng_translation
-    x = braille_array.map do |char|
+    eng_string = braille_array.map do |char|
           char.map do |s|
             braille_dictionary[s]
           end
       end.join
+    eng_string.scan(/.{40}|.+/).join("\n")
   end
 end
